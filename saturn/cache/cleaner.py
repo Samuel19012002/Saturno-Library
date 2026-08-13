@@ -2,7 +2,7 @@ from pathlib import Path
 import shutil
 
 
-def clear_cache() -> None:
+def clear_cache() -> tuple[int, int]:
     root = Path.cwd()
 
     deleted_dirs = 0
@@ -18,8 +18,4 @@ def clear_cache() -> None:
             path.unlink()
             deleted_files += 1
 
-    print(
-        f"Cache cleared: "
-        f"{deleted_dirs} directories and "
-        f"{deleted_files} files removed."
-    )
+    return deleted_dirs, deleted_files

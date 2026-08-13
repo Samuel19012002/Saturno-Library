@@ -13,4 +13,10 @@ cache_app = typer.Typer(
     help="Clear Python cache files and __pycache__ directories.",
 )
 def clear() -> None:
-    clear_cache()
+    deleted_dirs, deleted_files = clear_cache()
+
+    typer.echo(
+        f"Cache cleared: "
+        f"{deleted_dirs} directories and "
+        f"{deleted_files} files removed."
+    )

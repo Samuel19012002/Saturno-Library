@@ -4,18 +4,24 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "saturn-library"
-version = "0.1.0"
-description = "Python development toolkit and CLI."
-readme = "README.md"
+version = "0.2.0"
+description = "A Python development toolkit and CLI for simplifying common development workflows."
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.12"
 
 dependencies = [
     "typer",
     "uvicorn",
+    "psutil",
 ]
 
 [project.scripts]
 sr = "saturn.cli.main:app"
+
+[project.urls]
+Homepage = "https://github.com/Samuel19012002/Saturno-Library"
+Repository = "https://github.com/Samuel19012002/Saturno-Library"
+Issues = "https://github.com/Samuel19012002/Saturno-Library/issues"
 
 [tool.setuptools.packages.find]
 include = ["saturn*"]
